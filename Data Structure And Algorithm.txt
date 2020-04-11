@@ -1,0 +1,187 @@
+*# Data Structure And Algorithm*
+
+### *Analysis of Algorithm*
+
+*Q. What are Notations?*
+
+*=> Notations are used for 'Algorithm runtime Analysis'.*
+
+*There are three Notations for run time environment*
+
+1. *Omega : gives the lowest bound of an algorithm i.e. For any given input running 				time of a given algorithm will not be less than the given omega time.*
+
+2.  *Big-o : gives upper bound of a given algorithm i.e. For any given input running 				time of a given algorithm will not be greater than the given Big-o time.*
+
+3. *Theta : it decides whether upper bound and lower bound of a given algorithm are same or not.(Average)*
+
+   
+
+| *Time Complexity* | *Name*               | *Example*                                         |
+| ----------------- | -------------------- | ------------------------------------------------- |
+| *O(1)*            | *Constant*           | *Adding an element at the front of a linked list* |
+| *O(logn)*         | *logarithmic*        | *Finding an element in the sorted array*          |
+| *O(n)*            | *Linear*             | *Finding an element in unsorted Array*            |
+| *O(nlogn)*        | *Linear Logarithmic* | *Merge Sort*                                      |
+| *O(n^2)*          | *Quadratic*          | *Shortest path b/w two nodes of an graph*         |
+| *O(n^3)*          | *Cubic*              | *Matrix Multiplication*                           |
+| *O(2^n)*          | W                    | *Tower of Hanoi problem*                          |
+
+##### *Algorithm Run time Graph*
+
+*![algo_run_time_graph](C:\Users\Prince Kumar\Downloads\algo_run_time_graph.png)*
+
+
+
+***Q. How to calculate 'Algorithm Time Complexity ?***
+
+*=> There are two types of Algorithms*
+
+1. ###### *Iterative Algorithm*
+
+2. *Recursive Algorithm*
+
+   ###### *Iterative Algorithm*
+
+   *Q. Find the biggest no in the array*
+
+   *`*
+
+   ```
+   1. FindBiggestNumber(int arr[]);`
+   
+      biggestNumber=arr[0]				----------------------O(1)
+   
+      loop i=1 to length(arr)-1		----------------------O(n)  
+   
+      ​	if arr[i]>biggestNumber		----------------------O(1)
+   
+      ​		biggestNumber=arr[i]	----------------------O(1)
+   
+      return biggestNumber				----------------------O(1)
+   
+   Time Complexity : O(1)+O(n)+O(1)+O(1)+O(1)
+   				:O(n)+constant
+   ```
+
+   ###### *Recursive Algorithm*
+
+   *Q. Find the biggest no in the array*
+
+   
+
+```
+ FindBiggestNumber(A,n);`
+   static biggestNumber=Integer.MIN		-------------O(1)
+   if n equals -1						-------------O(1)
+   		return biggerNumber				-------------O(1)
+   	else								-------------O(1)
+   		if(A[n]>biggerNumber)			-------------O(1)
+   			update biggerNumber			-------------O(1)
+   	return FindBiggerNumber(A,n-1)		-------------T(n-1)
+   	
+   	Back Substitution:
+   	-------------------------
+   	T(n)=O(1)+T(n-1)	------------#Equation
+   	T(-1)=O(1)			------------Base Condition
+   	
+   	T(n-1)=O(1)+T((n-1)-1)
+   	T(n-2)=O(1)-T((n-2)-1))
+   	
+   	T(n)=1+T(n-1)
+   	T(n)=1+(1+T((n-1)-1))
+   	T(n)=2+T(n-2)
+   	T(n)=2+1+T((n-2)-1)
+   	T(n)=3+T(n-3)
+   	T(n)=k+T(n-k)
+   	replace value of k with n+1
+   	T(n)=n+1+T(n-(n+1))
+   	T(n)=n+1+T(n-n-1)
+   	T(n)=n+1+T(-1)
+   	T(n)=n+1+1
+   	T(n)=O(n)
+   	
+```
+
+##### *Physical Data Structure*
+
+1. Array
+2. Linked List
+
+###### Array
+
+types of Array: 
+
+1. One dimensional Array
+
+   ![Java One Dimensional Arrays](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUJZSnZojQHC4gA60n3CPiVPZ9IvY0LCbkKAseAlzOF299YBIW&usqp=CAU)
+
+2. Two Dimensional Array
+
+   ![C Multidimensional Arrays (2d and 3d Array)](data:image/png;base64,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)
+
+3. Three Dimensional Array
+
+   ![A chunked three-dimensional array with each chunk consisting of 2 ...](data:image/png;base64,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)
+
+Memory representation of an array
+
+1. One Dimensional Array
+
+![Pointers and 1-D arrays - OverIQ.com](data:image/png;base64,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)
+
+2. Multiple Dimensional Array
+
+   ![Memory Layout of Multi-Dimensional Arrays - DZone Performance](https://eli.thegreenplace.net/images/2015/row-major-3D.png)
+
+   ##### Common operations perform in Array
+
+   1. Declaring, insertion, initializing an Array
+
+   2. inserting a value
+
+   3. Traversing a given Array
+
+   4. Accessing given cells
+
+   5. Searching a given value
+
+   6. Deleting a given value
+
+      ###### Declaring, Insertion, initializing an Array
+
+Declaring only creates reference variable('arr') of an array does not allocate any memory for array in RAM.
+
+instantiation  creates the array of given size and instantiate it with value 0(default value) in case of an integer array. and takes the address of first block of an array and assign it to reference variable 'arr' .
+
+initialization means providing some default value for array
+
+Declare
+
+dataType[] arr;	-----------O(1)
+
+int[] arr;
+
+instantiation of an array
+
+arr=new int[5]		---------------O(1)
+
+initialization of an array -------------O(n)
+
+arr[0]=1;	-------------O(1)
+
+arr[1]=2	--------------O(1)
+
+arrr[2]=3	-----------O(1)
+
+arr[3]=4	------------O(1)
+
+arr[4]=5	-------------O(1)
+
+combine three steps
+
+int arr[]={1,2,3,4,5}		-----------------O(1)
+
+we didn't loop through all the cells.
+
+
+
