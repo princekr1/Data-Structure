@@ -10,11 +10,11 @@
 
 1. *Omega : gives the lowest bound of an algorithm i.e. For any given input running 				time of a given algorithm will not be less than the given omega time.*
 
-2.  *Big-o : gives upper bound of a given algorithm i.e. For any given input running 				time of a given algorithm will not be greater than the given Big-o time.*
+2. *Big-o : gives upper bound of a given algorithm i.e. For any given input running 				time of a given algorithm will not be greater than the given Big-o time.*
 
 3. *Theta : it decides whether upper bound and lower bound of a given algorithm are same or not.(Average)*
 
-   
+
 
 | *Time Complexity* | *Name*               | *Example*                                         |
 | ----------------- | -------------------- | ------------------------------------------------- |
@@ -28,9 +28,7 @@
 
 ##### *Algorithm Run time Graph*
 
-*![algo_run_time_graph](C:\Users\Prince Kumar\Downloads\algo_run_time_graph.png)*
-
-
+![Big o Cheatsheet - Data structures and Algorithms with thier ...](https://he-s3.s3.amazonaws.com/media/uploads/ece920b.png)
 
 ***Q. How to calculate 'Algorithm Time Complexity ?***
 
@@ -182,6 +180,3 @@ combine three steps
 int arr[]={1,2,3,4,5}		-----------------O(1)
 
 we didn't loop through all the cells.
-
-
-
