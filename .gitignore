@@ -8,3 +8,6 @@
 /.idea/modules.xml
 /out/production/Data Structure/Testing/Test.class
 /.idea/vcs.xml
+/.idea
+/out/
+*.iml
